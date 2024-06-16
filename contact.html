@@ -1,0 +1,141 @@
+<!-- All code adapted from public code from W3 Schools, unless otherwise noted. W3Schools (1999-2021). Accessed on March 2, 2021 from https://www.w3schools.com/ -->
+
+<!-- Again, XHTML 1.0 Strict declarations on each page, including language -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<!-- Same meta & title tags from home page. Please refer to the comment there. -->
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Contact - Lobster Bae</title>
+
+	<!-- To load an icon library with hamburger icon. Copied link from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp. Accessed on April 13, 2021 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Link this page to an external style sheet via a relative url. 'rel' attribute specifies the relationship from the current document to the linked document. 'type' specifies that the linked document is a css file of containing text. 'href' is the relative url link -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+		
+	<!-- Linking jQuery libraries / plugins -->
+	<script type="text/javascript" src="js/jquery.js"></script> <!-- Core jQuery library -->
+	<script type="text/javascript" src="js/validation/dist/jquery.validate.min.js"></script> <!-- Validate Plugin -->
+	<script type="text/javascript" src="js/validation/dist/additional-methods.min.js"></script>  <!-- Validate Plugin - additional methods -->
+
+	<!-- Calling JS for responsive nav bar functionality -->
+	<script type="text/javascript" src="js/topnav.js"></script> 
+
+	<!-- Needed for Google Maps API -->
+	<!-- Polyfills helps to fill in the gaps for which older browsers the Google Maps API may not have the capability to run the API -->
+	<!-- Allows for support of older browsers -->
+	<!-- Resource: https://polyfill.io/v3/ accessed on April 20, 21 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+</head>
+
+<body>
+
+	<!-- Div class used to separate this section. This is a fixed top navigation bar, including logo, contact number and relative links to the other pages. -->
+	<div class="topnav" id="myTopnav">
+
+		<div class="navLogo">
+			<img class="logo" src="img/lobsterbae_logo.png" width="200" height="200" alt="Lobster Bae logo" />
+		</div>
+		
+		<div class="navPhone">
+			<a href="tel:4031111111">Call us (403)111-1111</a>
+		</div>
+
+		<div class="navLinks">
+			<a href="javascript:void(0);" class="icon" onclick="navToggle()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="home.html">Home</a>
+			<a href="menu.html">Menu</a>
+			<a href="contact.html">Contact</a>
+			<a href="order.html" id="order">Order</a>
+		</div>
+		
+	</div>
+
+
+<!-- Div tag once again to separate the contact info. Since this is the main page for contact, I would like to add an interactive Google map on this page that will open up to Google map website/app when opened -->
+	<div class="contact2">
+	
+		<div id="location">
+			<span>
+				<h3>Location:</h3>
+				123 Lobster Road<br />
+				Lobster Bay, AB<br />
+				L0L 0L0<br />
+				<a href="tel:4031111111">(403)111-1111</a>
+				<br />
+				<h3>Hours of Pickup:</h3>
+				Daily 1PM - 6PM
+				<br />
+			</span>
+		</div>
+		
+		<!-- Div container for the Google Map -->
+		<div id="map">
+		</div>
+		
+	</div>
+	
+
+
+	
+	<br />
+	<h3>Get in touch!</h3>
+	
+<!-- Code for message form adapted from https://www.w3schools.com/tags/att_form_action.asp accessed February 20, 2021. Add functionality with php. This is a contact message form which will allow a user to input their info (first name, last name, phone number, email and message) and will send this info to a relative file named in the action attribute -->
+	<form id="contactForm">
+		<label for="fname">Full Name:</label><br />
+			<input type="text" id="fname1" name="fname" required/> <!-- Adding 'required' so form cannot be submitted without a value entered here -->
+			<br />
+		<label for="phone">Phone Number:</label><br />
+			<input type="tel" id="phone1" name="phone" required/>
+			<br />
+		<label for="email">Email:</label><br />
+			<input type="email" id="email1" name="email" required/> 
+			<br />
+		<label for="message">Message:</label><br />
+			<textarea id="message1" name="message" required></textarea>
+			<br />
+		<input type="submit" value="Submit" />
+	</form>
+	<br />
+	
+
+<!-- Same as other pages, <div> class for contact followed by a last modified statement -->
+	<div class="contact">
+		123 Lobster Road<br />
+		Lobster Bay, AB<br />
+		L0L 0L0<br />
+		<a href="tel:4031111111">(403)111-1111</a>
+	</div>
+	<br />
+	<span class="lastmodified">April 23, 2021 Chantal del Carmen</span>
+	
+<!----------------------------------- Linking js files --------------------------------------------------->
+<!-- Since these are linked at the very end, '$(document).ready(function())' is not required in js file -->
+
+	<!-- Calling JS for the Google Maps API -->
+	<script type="text/javascript" src="js/googleMaps.js"></script> 
+	
+	<!-- Async script for Google Maps API - must come after the DOM elements it calls back, as it executes immediately -->
+	<!-- Unique API key in the url generated from Google Cloud Platform -->
+	<!-- Resource: https://console.cloud.google.com/google/maps-apis accessed April 20, 2021 -->
+	<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBntRKH8bHkJjK52iXF6dJ_4RILrH_mq5c&callback=initMap">
+	</script>
+
+	
+	<!-- Calling js for the form validation functionality -->	
+	<script type="text/javascript" src="js/validate.js"></script> 
+	
+</body>
+</html>

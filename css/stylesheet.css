@@ -1,0 +1,709 @@
+
+
+/*--------------------------------------------------------------- BODY / GENERAL -------------------------------------------------------------------- */
+
+
+body {
+	font-family: Arial, sans-serif; /* These next few lines format the font (colour and size) of the page */
+	font-size: 18px;
+	color: black;
+	text-align: center; /* This aligns all text in the body to the center of the page */
+	line-height: 1.3; /* This increases line-height to 1.3 */
+	letter-spacing: 2px; /* This increases the space between letters */
+	margin: 0; /* Sets the body margin to 0 so the body and topnav is flush with the side of the page */
+	/* padding-top: 200px; */ /* This changes the padding within the block, or how much space there is on each side of the text */ 
+}
+
+
+
+/* These transform h1 and h3 headings */
+h1 {
+	letter-spacing: 8px;
+}
+
+
+h3 {
+	letter-spacing: 5px;
+	color: #baa03a; /* Used the Google colour picker tool to get this hex code. Accessed on March 2, 2021 from https://www.google.com/search?client=firefox-b-d&q=colorpicker */
+	text-transform: uppercase; /* This transforms all letters in heading2 to all uppercase */
+	font-size: 25px;;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------- LINKS -------------------------------------------------------------------- */
+
+
+ /* Link when it has not yet been visited */
+a:link {
+	color: black;
+}
+
+/* Visited link */
+a:visited {
+	color: #aaaaaa;
+}
+
+/* When hover over link */
+a:hover {
+	background-color: black;
+	color: white;
+}
+
+/* When you click on a link */
+a:active {
+	background-color: white;
+	color: black;
+}
+
+
+
+/*----------------------------------------------------------------- TOP NAVIGATION BAR ------------------------------------------------------------ */
+
+/* Formatting top nav to hide overflow and change bg colour to black */
+.topnav {
+	overflow: hidden;
+	background-color: black;
+}
+
+
+/* Styles the links in the top nav */
+.topnav a {
+	float: left; /* This makes the links float on the right side of the page */
+	display: block; /* This makes it so the entire block is clickable, and not just the words */
+	color: #baa03a;
+	text-align: center;
+	padding: 6px 10px;
+	text-decoration: none; /* Removes the underline from the links */
+	text-transform: uppercase; /* This transforms text characters to uppercase */
+	letter-spacing: 2px;
+}
+
+/* Color changes when hover over a link in the top nav */
+.topnav a:hover {
+	background-color: #baa03a;
+	color: black;
+}
+
+/* Hide the link that should open and close the nav bar on small screens */
+.topnav .icon {
+	display: none;
+}
+
+/* Format and center logo in top nav */
+div.navLogo {
+	display: block;
+	float: center;
+}
+
+
+/* Format navPhone to the right of the top nav and formats the text within the div */
+div.navPhone {
+	float: right;
+	display: block; /* This makes it so the entire block is clickable, and not just the words */
+	padding: 0px 8px 30px 0px; /* This changes the padding within the block, or how much space there is on each side of the text */
+	margin: 0px 5px 0px 0px;
+	color: #baa03a;
+	font-size: 26px;
+	text-align: center;
+	text-decoration: none; /* Removes the underline from the links */
+	text-transform: uppercase; /* This transforms text characters to uppercase */
+	letter-spacing: 4px;
+}
+
+/* Changes the font size of the page links */
+div.navLinks {
+	font-size: 21px;
+	display: block;
+}
+
+/* Adds border around order page link in the top nav */
+.navLinks #order {
+	border: 2px solid #baa03a;
+}
+
+
+
+/*------------------------------------------------------------- SMALLER SCREEN / RESPONSIVE CLASS OF TOP NAV --------------------------------*/
+
+/* When the screen is less than max-width */
+@media screen and (max-width: 1200px) {
+	
+/* Hide the links and navPhone number in the nav bar */
+	.topnav a {
+		display: none;
+		}
+		
+	.topnav .navPhone {
+		display: none;
+	}
+	
+/* Display the menu icon floating on the right of the nav bar */
+	.topnav a.icon {
+		float: right;
+		display: block;
+  }
+  
+
+}
+
+
+
+/* The 'responsive' class used in the following code is added to the navigation bar via JS, when the user clicks on the hamburger icon. 
+On smaller screens, this makes the nav bar display the links vertically rather than horizontally. */
+@media screen and (max-width: 1200px) {
+
+	/* Format links in top nav */
+	.topnav.responsive a {
+		float: none;
+		display: block;
+		text-align: center;
+
+	}
+	
+	/* Position responsive top nav */
+	.topnav.responsive {
+		position: relative;
+		}
+	
+	/* Position top nav hamburger icon */
+	.topnav.responsive .icon {
+		position: static;
+		text-align: right;
+
+	}
+
+
+	/* Hide navPhone number in top nav in responsive class */
+	.topnav.responsive .navPhone {
+		display: none;
+	}
+}
+
+
+
+
+/* -------------------------------------------------------------------- BANNER --------------------------------------------------------------------------- */
+
+/* Code for 'banner' id adapted from Digital Ocean: How to Change a CSS Background Image’s Opacity Tutorial (Method 2). Accessed on March 2, 2021 from https://www.digitalocean.com/community/tutorials/how-to-change-a-css-background-images-opacity */
+
+/* This formats the id "banner" so its position is relative to it's normal position, and crops the overflow so it is hidden. It makes things more flush and appear cleaner */
+#banner {
+    position: relative;
+    overflow: hidden;
+	left: auto;
+	right: auto;
+}
+
+/* Formatting the position and text of header 2 and image links in the banner id */
+#banner h1, h2, a img {
+    position: relative;
+    z-index: 2; /* This sets the position of the layer to position 2 */
+	color: white;
+}
+
+/* Formatting the padding of the header 2 in the banner id */
+#banner h1 {
+	padding-top: 75px;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-size: 60px;
+	letter-spacing: 10px;
+	text-shadow: 2px 3px black;
+}
+
+/* Formatting the padding of the header 2 in the banner id */
+#banner h2 {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-shadow: 2px 3px black;
+}
+
+
+/* Formatting the padding of the image in the banner id */
+#banner img {
+	padding-bottom: 75px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/*  The pseudo-element 'before' adds content before any element with the id 'banner'. With background size set to 'cover', it stretches the image to the full size of the window. This is a work-around as there is no way to change the opacity of a background image. Here we are creating an imaginary container to put the image in the background of the container and change the opacity of the container itself. The content " " is a space-holder. This also positions the container as the bottom most layer, aka z-index: 1. */
+#banner:before {
+    content: " "; /* Content is just a 'space' character because we are creating an imaginary container */
+    display: block; /* This turns our imaginary container into a block */
+    position: absolute; /* Position is relative to its first position */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.85; /* Changes opacity of our container, and in turn our lobster image */
+    background-image: url("../img/shutterstock_lobster.jpg"); /* Adds the lobster image to the background of our imaginary container */
+    background-repeat: no-repeat; /* Makes it so our image only repeats one time */
+    background-position: 0; /* These next two lines format the background image */
+    background-size: cover;
+}
+
+
+/* -------------------------------------------------------------------- WELCOME --------------------------------------------------------------------------- */
+
+/* Formatting the welcome div on the homepage */
+#welcome {
+	position: relative;
+	font-size: 30px;
+	letter-spacing: 8px;
+	font-family: Arial, sans-serif;
+	padding-top: 20px;
+}
+
+/* -------------------------------------------------------------------- MISSION BOX --------------------------------------------------------------------------- */
+
+/* This code styles all elements with the id of "mission" to have this type of border and centred-text */
+#mission {
+	border: medium solid #baa03a;
+	padding: 30px;
+	margin: 30px;
+	text-align: center;
+	width: auto;
+}
+
+
+/* -------------------------------------------------------------------- REVIEW SLIDER --------------------------------------------------------------------------- */
+
+/*
+Built HTML base with an unordered list to prepare for JS. 
+CSS added to make the slides work.
+JS used to add the slider functionality. 
+Code copied from Site Point on March 22 2021, 
+accessed from https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/ 
+*/
+
+#slides {
+    position: relative;
+    height: 100px;
+	width: 65%;
+	padding-left: 50px; /* Add padding to either side of the slideshow */
+	padding-right: 50px;
+	padding-bottom: 30px;
+	margin-left: auto; /* Centers the slideshow */
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+	display: block; /* Displays the slideshow together as a block */
+    list-style-type: none; /* Removes bullets from the list */
+	font-style: italic; /* Italicizes test */
+	overflow: auto; /* Adds scroll bars if content overflows */
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%; 
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+/* The next few lines changes the opacity of the text when it is transitioning from one review to the next, for a fade effect */
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+/* The next piece of code makes sure the opacity of the "showing" slide is 1, and z-index is 2 so it sits on top of the other slides */
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/* ------------------------------------------------------------------------- FOR INSTAGRAM EMBED ----------------------------------------------------------*/
+
+/* Format the div container with the instagram embed feed */
+.post {
+	margin: 0 auto; /* Center div */
+	width: 400px;
+}
+
+
+
+/* --------------------------------------------------------------------- MENU PAGE ---------------------------------------------------------------------------  */
+
+
+/* CSS code for styling and formatting the show-description class toggle of the menu items */
+/* Code adapted from https://codepen.io/timimasa/pen/RNyGJm. Accessed on April 19, 2021. */
+
+/* Center everything in the body */
+body {
+  margin: 0 auto;
+}
+
+
+/* Styling the menu item name */
+.item {
+	width: 100%;
+	color: rgba(255,255,255,1);
+	
+	/* Background properties of the item name container */
+	background: black;
+	background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+
+	/* More formatting */
+	line-height: 28px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	height: 30px;
+  
+	/* Formats transition properties of the item names */
+	transition: height .5s;
+	-webkit-transition: height .5s;
+	-moz-transition: height .5s;
+
+}
+
+/* Formatting the text within small tags */
+small {
+  opacity: 0;
+}
+
+
+/* Formatting the paragraph and small tags when show-description is toggled on */
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+
+/* Formatting the div containers of the first, second and third menu items */
+
+.first, .second, .third {
+	height: 200px;
+	width: 90%; 
+	max-width: 500px; /* Ensures that the max width of the divs can not exceed 500px */
+	background-size: cover; /* Makes size cover entire container */
+    background-repeat: no-repeat; /* Do not repeat the image */
+	position: relative;
+	margin: 0 auto; /* Centers divs */
+	border-radius: 12px; /* Makes corners of divs rounded */
+}
+
+
+/* Adding in the image relative paths and positioning */
+.first{
+    background-image: url("../img/roll.jpg");
+	background-position: center;
+}
+.second{
+    background-image: url("../img/bisque.jpg");
+}
+.third{
+    background-image: url("../img/macchs.jpg");
+}
+
+
+ /* Media Queries - if screen is less than specified max width change to the following properties */
+@media (max-width: 500px) {
+
+	/* Change margin in the div containers of menu items */
+	.first, .second, .third {
+		margin: 20px 12px 0 12px;
+	}
+	
+	/* Change font size and line height of item name */
+	.item {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	
+	/* Change font size of text within small tag */
+	small {
+		font-size: 16px;
+	}
+}
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------- CONTACT FOOTER --------------------------------------------- */
+
+/* This code styles any element with the class "contact" and applies the following properties */
+.contact {
+	/* background-color: #baa03a; */
+	background-color: #CCB86A;
+	margin: 0;
+	padding: 10px;
+	color: white;
+	
+/* This tells the transform transition in the class "contact" to be 2s in duration. The transform property follows in the next block of code. */
+	transition: transform 2s;
+}
+
+/* When you hover over the contact div at the bottom of every page, using the class "contact", it is scaled up to 1.4x its original size */
+.contact:hover {
+	transform: scale(1.4);
+}
+
+
+
+/* ----------------------------------------------------------------- CONTACT PAGE -------------------------------------------------------------- */
+
+/* This code styles the class 'contact2' and applies the following properties */
+.contact2 {
+	/* margin: 0; */
+	display: inline-block;
+	margin-left: auto; /* Centers the div */
+	margin-right: auto;
+	margin-bottom: auto;
+	padding: 30px 0px;
+	background-color: #CCB86A;
+	height: 310px;
+	width: 100%;
+}
+
+
+/* This code styles the h3 header in the class 'contact2' and applies the following properties */
+.contact2 h3 {
+	color: white
+}
+
+/* Formatting divs to add in the Google Maps API */
+
+#location {
+	text-align: right;
+	width: 350px;
+	height: 200px;
+	padding: 0px 15px 50px 0px;
+	display: inline-block;
+	
+  }
+  
+ #location span {
+	/* vertical-align: middle; */
+ }
+
+#map {
+	width: 350px;
+	height: 200px;
+	clear: left;
+	display: inline-block;
+	padding: 50px 5px 0px 0px;
+
+}
+
+
+
+/*------------------------------------------------------- BUTTONS, INPUT, SELECT, LABELS ----------------------------------------------------------------- */
+
+/* The following code formats the input with type 'submit', which is the Submit Button, as well as any other buttons */
+button, input[type=submit] {
+	width: 67px; /* Changes width of button */
+	display: block;
+	background-color: #888888;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial, sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+
+
+/* Formats button so it does not float next to the form div */
+/* Code adapted from https://www.w3schools.com/css/css_float_clear.asp. Accessed April 13, 2021. */
+#confirmButton {
+	clear: left;
+	width: 80px;
+
+}
+
+/* Set width of the input type number - "qty" cell */
+/* Code adapted from https://stackoverflow.com/questions/22709792/input-type-number-wont-resize. Accessed on April 15, 2021. */
+input[type=number]{
+    width: 60px;
+} 
+
+
+/* Code adapted from CSS Drive, accessed on March 9, 2021 from http://www.cssdrive.com/index.php/examples/exampleitem/focus_pseudo_class/. This changes the background colour of the message form to a light gold colour when it is clicked on to input information. */
+input:focus, textarea:focus {
+	background-color: #c3e9d7;
+}
+
+
+/* Formatting the input fields of the order form */
+input.form {
+	width: 200px;
+	text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    border:1px solid black;
+    padding:5px;
+    display: inline-block;
+    visibility: visible;
+	appearance: none;
+}
+
+
+/* Formatting the dropdown lists of the order form */
+select.form {
+	width: 210px;
+	padding: 5px;
+    font-family: Arial, sans-serif;
+	font-size: 18px;
+    visibility: visible;
+    border:1px solid black;
+
+}
+
+
+/* Format the entire form div as a block */
+div.form {
+	display: inline-block;
+	margin-left: auto; /* Centers the form */
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+	text-align: left;
+
+}
+
+
+/* Format the select product dropdown list on the order page */
+#selectProduct {
+	width: 210px;
+	margin: 0 auto;
+}
+
+/* Format form1 field div as a block */
+#form1 {
+	padding: 25px 75px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+/*Format form2 field div as a block */
+#form2 {
+	padding: 25px 75px;
+	display: inline-block;
+}
+
+#form3 {
+	padding: 25px;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+
+/* When the screen is less than max-width */
+@media screen and (max-width: 1200px) {
+	
+	/* Format the div with the class 'form' */
+	div.form {
+	display: inline-block;
+	margin-left: auto; /* Centers the form */
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+	text-align: center; /* Center-align text */
+	}
+	
+
+}
+
+
+
+/* Format the whole contact form div on the contact page */
+#contactForm {
+	width: 210px;
+	margin: 0 auto;
+}
+
+/*Setting width of the following input fields in the contact form */
+#fname1, #phone1, #email1 {
+	width: 160px;
+}
+
+#message1 {
+	width: 210px;
+	height: 100px;
+}
+
+
+
+/*------------------------------------------------------- VALIDATION  ----------------------------------------------------------------- */
+
+/* Styles CSS code adapted from https://jqueryvalidation.org/files/demo/site-demos.css. Accessed April 18, 2021. */
+
+/* Format labels to same width and lineup with each other */
+label {
+    display: inline-block;
+    width: 180px;
+	margin: 0 auto;
+      }
+	  
+/* Format valid labels */
+label.valid {
+    display: inline-block;
+    width: 160px;
+      }
+
+/* Format error labels */
+label.error {
+	display: inline-block;
+	float: right;
+	font-size: small;
+	margin: 0px 10px 0px 0px;
+}
+
+/* Clear both sides of a line break */
+br {
+	clear: both;
+}
+
+
+
+
+
+/*------------------------------------------------------- TABLES / ORDER TABLES ----------------------------------------------------------------- */
+
+
+/* The following code styles any tables, including table headers (td) and table data cells (td) */
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse; /* This collapses the 2 borders into 2 */
+	padding: 5px;
+	margin-left: auto; /* The next 2 lines centre the table on the page */
+	margin-right:  auto; 
+	background-color: #CCB86A;
+	/* Code copied from https://stackoverflow.com/questions/20375288/make-columns-of-equal-width-in-table, accessed on April 13, 2021 */
+	table-layout: fixed; 
+	white-space: break-word; /* Code copied from https://stackoverflow.com/questions/1258416/word-wrap-in-an-html-table, accessed on April 19, 2021 */
+	table-layout: fixed;
+	max-width: 900px; /* Max width a table can be */
+	font-size: 90%;
+}
+
+/* Formatting order table */
+#orderTable {
+	width: 90%;
+}
+
+/* Formatting total table */
+#totalTable {
+	width: 90%;
+}
+

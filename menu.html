@@ -1,0 +1,109 @@
+<!-- All code adapted from public code from W3 Schools, unless otherwise noted. W3Schools (1999-2021). Accessed on March 2, 2021 from https://www.w3schools.com/ -->
+
+<!-- Again, XHTML 1.0 Strict declarations on each page, including language -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ 
+<!-- Same meta & title tags from home page. Please refer to the comment there. -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title>Menu - Lobster Bae Menu</title>
+
+	<!-- To load an icon library with hamburger icon. Copied link from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp. Accessed on April 13, 2021 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<!-- Link this page to an external style sheet via a relative url. 'rel' attribute specifies the relationship from the current document to the linked document. 'type' specifies that the linked document is a css file of containing text. 'href' is the relative url link -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+
+	<!-- Linking core jQuery library -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+	<!-- Calling JS for responsive nav bar functionality -->
+	<script type="text/javascript" src="js/topnav.js"></script> 
+
+	
+</head>
+
+<body>
+
+	<!-- Div class used to separate this section. This is a fixed top navigation bar, including logo, contact number and relative links to the other pages. -->
+	<div class="topnav" id="myTopnav">
+
+		<div class="navLogo">
+			<img class="logo" src="img/lobsterbae_logo.png" width="200" height="200" alt="Lobster Bae logo" />
+		</div>
+		
+		<div class="navPhone">
+			<a href="tel:4031111111">Call us (403)111-1111</a>
+		</div>
+
+		<div class="navLinks">
+			<a href="javascript:void(0);" class="icon" onclick="navToggle()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="home.html">Home</a>
+			<a href="menu.html">Menu</a>
+			<a href="contact.html">Contact</a>
+			<a href="order.html" id="order">Order</a>
+		</div>
+		
+	</div>
+	
+	<!-- Changed the menu section to use div containers instead of <dl> tag to incorporate the description toggle function -->
+	<!-- Code adapted from https://codepen.io/timimasa/pen/RNyGJm. Accessed on April 19, 2021. -->
+	
+	<h3>Menu</h3>
+	
+	<p>Please click on the item to view description.</p>
+  
+	<!-- Each menu item is in it's own div container so it can be manipulated with jQuery / CSS -->
+	<!-- Classes are given to the item names and prices for formatting -->
+	<div class="first">
+		<p class="item">5" Specialty Lobster Roll <span class="price">$19</span><br />
+			<small>A toasted, garlic-buttered roll with chunks of freshly steamed lobster.
+			Topped with our homemade butter sauce and a splash of lemon. </small></p>
+	</div>
+	<br />
+	
+	<div class="second">
+		<p class="item">Lobster Bisque <span class="price">$9</span><br />
+		<small>A decadent lobster bisque soup made with lobster meat,
+			butter, milk, and a little sherry.</small></p>
+	</div>
+	<br />
+	
+	<div class="third">
+		<p class="item">Lobster Mac & Cheese <span class="price">$23</span><br />
+			<small>Made with swiss cheese, aged cheddar, lobster & bacon.
+			Finished off with breadcrumbs, lemon zest & garlic oil.</small></p>
+	</div>
+
+
+	<!-- <p> tag just symbolizes paragraph formatting -->
+	<p>Contains gluten, dairy, & seafood<br />
+	Each roll prepared with fresh, live lobster</p>
+	<br />
+
+	<!-- Same as other pages, <div> class for contact followed by a last modified statement -->
+	<div class="contact">
+		123 Lobster Road<br />
+		Lobster Bay, AB<br />
+		L0L 0L0<br />
+		<a href="tel:4031111111">(403)111-1111</a>
+	</div>
+	<br />
+	<span class="lastmodified">April 23, 2021 Chantal del Carmen</span>
+	
+
+<!----------------------------------- Linking js files --------------------------------------------------->
+<!-- Since these are linked at the very end, '$(document).ready(function())' is not required in js file -->
+	
+	<!-- Calling JS for show description toggle class functionality -->	
+	<script type="text/javascript" src="js/menu.js"></script> 
+	
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!-- All code adapted from public code from W3 Schools, unless otherwise noted. W3Schools (1999-2021). Accessed on March 2, 2021 from https://www.w3schools.com/ -->
+
+<!-- Again, XHTML 1.0 Strict declarations on each page, including language -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ 
+<!-- Same meta & title tags from home page. Please refer to the comment there. -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Order - Lobster Bae Menu</title>
+	
+	<!-- To load an icon library with hamburger icon. Copied link from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp. Accessed on April 13, 2021 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Link this page to an external style sheet via a relative url. 'rel' attribute specifies the relationship from the current document to the linked document. 'type' specifies that the linked document is a css file of containing text. 'href' is the relative url link -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+	
+	<!-- Linking jQuery libraries / plugins -->
+	<script type="text/javascript" src="js/jquery.js"></script> <!-- Core jQuery library -->
+	<script type="text/javascript" src="js/validation/dist/jquery.validate.min.js"></script> <!-- Validate Plugin -->
+	<script type="text/javascript" src="js/validation/dist/additional-methods.min.js"></script>  <!-- Validate Plugin - additional methods -->
+
+	<!-- Calling JS for responsive nav bar functionality -->
+	<script type="text/javascript" src="js/topnav.js"></script> 
+
+</head>
+
+<body>
+
+	<!-- Div class used to separate this section. This is a fixed top navigation bar, including logo, contact number and relative links to the other pages. -->
+	<div class="topnav" id="myTopnav">
+
+		<div class="navLogo">
+			<img class="logo" src="img/lobsterbae_logo.png" width="200" height="200" alt="Lobster Bae logo" />
+		</div>
+		
+		<div class="navPhone">
+			<a href="tel:4031111111">Call us (403)111-1111</a>
+		</div>
+
+		<div class="navLinks">
+			<a href="javascript:void(0);" class="icon" onclick="navToggle()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<a href="home.html">Home</a>
+			<a href="menu.html">Menu</a>
+			<a href="contact.html">Contact</a>
+			<a href="order.html" id="order">Order</a>
+		</div>
+		
+	</div>
+
+
+
+
+	<!-- HTML code for online ordering system adapted from https://www.sourcecodester.com/php/4177/online-ordering-system.html accessed February 19, 2021. 
+	<!-- Add functionality to this later on. I used table tags to create the base of an online ordering system that will display the product being ordered as well as price and grand total, with the option to delete items from the order. <th> is used for headers, <tr> is used to indicate a row, <td> is a data cell. Ensure proper nesting. Border adds a border, and colspan indicates how many cells to span. -->
+	
+<form id="orderForm">
+	<h3>Order Details</h3>
+
+<div id="selectProduct">  
+	<label for="ddlOrderBy">Select Product:</label><br />
+	<select id="ddlOrderBy" class="form" required>
+		<option value="" selected="selected"></option> <!-- Default option is blank -->
+		<option value="19.00">Roll</option> <!-- Value is the price of each product -->
+		<option value="9.00" >Bisque</option> <!-- Text in between the option tags is what will be displayed --> 
+		<option value="23.00">Mac & Cheese</option>
+	</select>
+</div>
+
+	<br />
+	<br />
+	
+	<!-- Order table -->
+	<table id="orderTable">
+		<th>Product</th> <!-- TH denotes header cells of the table -->
+		<th id="qty">Qty</th>
+		<th id="price">Price</th>
+		<th id="total">Total</th>
+		<th id="remove">Remove</th>							 
+	</table>
+	
+	<!-- Total table -->
+	<table id="totalTable">
+			<tr>
+				<th colspan="3">Sub Total</th> <!-- Column span tells the table how many columns to span across -->
+				<td colspan="2">Sub Total</td> <!-- TD denotes data cells of the table -->
+			</tr>
+			<tr>
+				<th colspan="3">Tax (12%)</th>
+				<td colspan="2">Taxes</td>
+			</tr>
+			
+			<tr>
+				<th colspan="3">Grand Total</th>
+				<td colspan="2">Grand Total</td>
+			</tr>
+	</table>
+	<br />
+		
+
+	<!-- Code adapted from https://www.w3schools.com/tags/att_input_type_date.asp accessed February 20, 2020. -->
+	<!-- This form allows the user to select a calendar date and time to pick up their food order -->
+	<!-- Added functionality to this with JS  -->
+	<div class="form">
+	
+		<div id="form1">
+			<!-- <label> tag does as it is named, and creates labels for theses functions that is visible on the webpage itself -->
+			<label for="pickupDate">Pickup Date:</label>
+			<br />		
+			<!-- The <input> tag for date opens a pop up calendar to select a date -->
+			<input type="date" id="orderDate" name="date" class="form" required/>
+			<br />
+			<br />	
+			<label for="time">Pickup Time:</label>
+			<br />		
+			<!-- The <select> tag creates a drop down menu with different <option> times -->
+			<select name="time" id="orderTime" class="form" required>
+				<option value="" selected="selected"></option>
+				<option value="1:00pm">1:00pm</option>
+				<option value="2:00pm">2:00pm</option>
+				<option value="3:00pm">3:00pm</option>
+				<option value="4:00pm">4:00pm</option>
+				<option value="5:00pm">5:00pm</option>
+				<option value="6:00pm">6:00pm</option>
+			</select>
+		</div>
+		
+		<div id="form2">
+		
+			<!-- Input name code copied. Accessed on April 12, 2021 from https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_name -->
+			<label for="fname">Full Name:</label>
+			<br />
+			<input type="text" id="fname" class="form" name="fname" required/>
+			<br />
+			<br />			
+			<label for="phone">Phone Number:</label>
+			<br />
+			<input type="tel" id="phone" class="form" name="phone" required/>
+		</div>
+		<br />	
+		
+	</div>
+	<br />
+	
+	<div id="form3">
+		
+			<label for="allergies">Allergies:</label>
+			<br />
+			<input type="text" class="form" name="allergies"/>
+			<br />
+			<!-- <button> submit button creates a clickable submit button -->
+			<button id="confirmButton">Confirm</button>		
+			
+	</div>
+
+</form>
+
+	<br />
+	<br />
+	
+	<!-- Same as other pages, <div> class for contact followed by a last modified statement -->
+	<div class="contact">
+		123 Lobster Road<br />
+		Lobster Bay, AB<br />
+		L0L 0L0<br />
+		<a href="tel:4031111111">(403)111-1111</a>
+	</div>
+	<br />
+	
+	<span class="lastmodified">April 23, 2021 Chantal del Carmen</span>
+	
+	
+<!----------------------------------- Linking js files --------------------------------------------------->
+<!-- Since these are linked at the very end, '$(document).ready(function())' is not required in js file -->
+
+	<!-- Calling JS for ordering system functionality -->
+	<script type="text/javascript" src="js/orderSystem.js"></script> 
+	
+	<!-- Calling js for the delete row functionality -->
+	<script type="text/javascript" src="js/deleteRow.js"></script> 
+
+	<!-- Calling js for the form validation functionality -->	
+	<script type="text/javascript" src="js/validate.js"></script> 
+	
+</body>
+</html>
