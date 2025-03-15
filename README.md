@@ -2,7 +2,8 @@ Restaurant Website
 
 Welcome to the repository for our restaurant website! This project showcases a fully responsive website built with HTML, CSS, and JavaScript.
 
-🌐 Visit the Website: https://chantal-delcarmen.github.io/restaurant-website/
+🌐 Visit the Website: https://lobster-bae.vercel.app/
+OR https://chantal-delcarmen.github.io/restaurant-website/
 
 Features:
 - Responsive Design: Works seamlessly on all devices.
